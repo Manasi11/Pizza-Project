@@ -1,0 +1,46 @@
+CREATE DATABASE PIZZA;
+
+CREATE TABLE User(
+		   first_name varchar(50) NOT NULL,
+		   last_name  varchar(50) NOT NULL,
+ 		   email VARCHAR(50) NOT NULL,
+		   password VARCHAR(50) NOT NULL,
+		   role INT NOT NULL,
+		   PRIMARY KEY (email)
+);
+
+INSERT INTO User (first_name,last_name,email,contact,apartment_no,area,city,state,zip)
+                VALUES ("Manasi","Prabhune","manasi@gmail.com","17043230402","10004b","grad lane","Charlotte","NC","28262"),
+		       ("Ramsay","Snow","ramsay1@gmail.com","9802281898","9542k","ut drive","Charlotte","NC","28261");
+				
+
+
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product_name` varchar(45) DEFAULT NULL,
+  `product_price` varchar(45) DEFAULT NULL,
+  `product_desc` varchar(500) DEFAULT NULL,
+  `product_image` varchar(1000) DEFAULT NULL,
+  PRIMARY KEY (`id`));
+  INSERT INTO `products` VALUES (1,'margherita','7.5','cheese and base with tomato sauce','images/marg.png'),(2,'cheese','10','Just extra cheese','images/cheese.png');
+  
+
+insert into products values (3,'peporoni','7.9','cheese with tomato and peporoni','images/pepo.png');
+
+
+CREATE TABLE order(
+		   order_id int NOT NULL,
+		   menuId int NOT NULL,
+		   quantity int NOT NULL,
+		   price float NOT NULL,
+		   FOREIGN KEY (purchase_order_id) int,
+		   PRIMARY KEY(order_id)
+		 
+);
+
+CREATE TABLE purchase(
+		       order_id int NOT NULL,
+		       order_total float NOT NULL,
+		       card_details varchar(50) NOT NULL,
+		      PRIMARY KEY(order_id)
+);
